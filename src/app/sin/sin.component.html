@@ -1,0 +1,6 @@
+<form action="" [formGroup]="sinForm" (ngSubmit)="calcul()">
+  <label for="x">input x : </label>
+  <input type="number" name="x" id="x" formControlName="x">
+  <input type="submit" value="sin" [disabled]="sinForm.invalid">
+</form>
+<p>Result : {{result}}</p>

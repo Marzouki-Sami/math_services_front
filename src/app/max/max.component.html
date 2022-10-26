@@ -1,0 +1,8 @@
+<form action="" [formGroup]="maxForm" (ngSubmit)="calcul()">
+  <label for="x">x : </label>
+  <input type="number" name="x" id="x" formControlName="x">
+  <label for="y">y : </label>
+  <input type="number" name="y" id="y" formControlName="y">
+  <input type="submit" value="max" [disabled]="maxForm.invalid">
+</form>
+<p>Result : {{result}}</p>
