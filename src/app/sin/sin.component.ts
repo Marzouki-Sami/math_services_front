@@ -26,9 +26,9 @@ export class SinComponent implements OnInit {
   calcul(){
     this.math.sin(this.sinForm.value.x).subscribe(response => {
       this.response = response.toString();
-      this.start = this.response.indexOf("result");
-      this.end = this.response.indexOf("</tns:result");
-      this.result = this.response.substring(this.start+8, this.end);
+      this.start = this.response.indexOf("<tns:sinResult");
+      this.end = this.response.indexOf("</tns:sinResult");
+      this.result = this.response.substring(this.start+15, this.end);
     });
   }
 }

@@ -28,9 +28,9 @@ export class MaxComponent implements OnInit {
   calcul(){
     this.math.max(this.maxForm.value.x,this.maxForm.value.y).subscribe(response=>{
       this.response = response.toString();
-      this.start = this.response.indexOf("Result>");
+      this.start = this.response.indexOf("<tns:maxResult");
       this.end = this.response.indexOf("</tns:maxResult");
-      this.result = this.response.substring(this.start+8,this.end);
+      this.result = this.response.substring(this.start+15,this.end);
     });
   }
 }

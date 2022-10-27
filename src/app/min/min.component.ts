@@ -27,9 +27,9 @@ export class MinComponent implements OnInit {
   calcul(){
     this.math.min(this.minForm.value.x,this.minForm.value.y).subscribe(response=>{
       this.response = response.toString();
-      this.start = this.response.indexOf("Result>");
-      this.end = this.response.indexOf("</tns:maxResult");
-      this.result = this.response.substring(this.start+8,this.end);
+      this.start = this.response.indexOf("<tns:minResult");
+      this.end = this.response.indexOf("</tns:minResult");
+      this.result = this.response.substring(this.start+15,this.end);
     });
   }
 }

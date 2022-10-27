@@ -27,10 +27,10 @@ export class CosComponent implements OnInit {
   calcul(){
     this.math.cos(this.cosForm.value.x).subscribe(response => {
       this.response = response.toString();
-      this.start = this.response.indexOf("result");
-      this.end = this.response.indexOf("</tns:result");
-      this.result = this.response.substring(this.start+8, this.end);
-    });
+      this.start = this.response.indexOf("<tns:cosResult");
+      this.end = this.response.indexOf("</tns:cosResult");
+      this.result = this.response.substring(this.start+15, this.end)
+    })
   }
 
 }
